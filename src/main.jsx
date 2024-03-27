@@ -6,9 +6,9 @@ import { HeroesApp } from './HeroesApp'
 import './themes/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <HeroesApp />
-        </BrowserRouter>
-    </React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter>
+      <HeroesApp />
+    </BrowserRouter>
+  </React.StrictMode>
 );

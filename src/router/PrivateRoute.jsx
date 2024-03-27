@@ -5,18 +5,18 @@ import { AuthContext } from '../auth';
 
 export const PrivateRoute = ({ children }) => {
 
-    const { logged } = useContext( AuthContext );
-    // const { pathname, search } = useLocation();
+  const { logged } = useContext(AuthContext);
+  // const { pathname, search } = useLocation();
 
-    // const lastPath = pathname + search;
-    
-    // useEffect(() => {
+  // const lastPath = pathname + search;
 
-    //     localStorage.setItem( 'lastPath', lastPath );
+  // useEffect(() => {
 
-    // }, [pathname, search]);
+  //     localStorage.setItem( 'lastPath', lastPath );
 
-    return (logged)
-        ? children
-        : <Navigate to='/login' />
+  // }, [pathname, search]);
+
+  return (logged)
+    ? children
+    : <Navigate to='/login' />
 };

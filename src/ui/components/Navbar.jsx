@@ -5,68 +5,68 @@ import { AuthContext } from '../../auth/context';
 
 export const Navbar = () => {
 
-    const { user, logout  } = useContext( AuthContext );
+  const { user, logout } = useContext(AuthContext);
 
-    const navigate = useNavigate();
-    
-    const onLogout = () => {
-        logout();
-        navigate('/login', {
-            replace: true
-        });
-    };
-    
-    return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
-            
-            <Link 
-                className="navbar-brand" 
-                to="/"
-            >
-                Asociaciones
-            </Link>
+  const navigate = useNavigate();
 
-            <div className="navbar-collapse">
-                <div className="navbar-nav">
+  const onLogout = () => {
+    logout();
+    navigate('/login', {
+      replace: true
+    });
+  };
 
-                    <NavLink 
-                        className={ ({ isActive }) => `nav-item nav-link ${ isActive ? 'active' : ''}`} 
-                        to="/marvel"
-                    >
-                        Marvel
-                    </NavLink>
+  return (
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
 
-                    <NavLink 
-                        className={ ({ isActive }) => `nav-item nav-link ${ isActive ? 'active' : ''}`} 
-                        to="/dc"
-                    >
-                        DC
-                    </NavLink>
+      <Link
+        className="navbar-brand"
+        to="/"
+      >
+        Asociaciones
+      </Link>
 
-                    <NavLink 
-                        className={ ({ isActive }) => `nav-item nav-link ${ isActive ? 'active' : ''}`} 
-                        to="/search"
-                    >
-                        Search
-                    </NavLink>
+      <div className="navbar-collapse">
+        <div className="navbar-nav">
 
-                </div>
-            </div>
+          <NavLink
+            className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
+            to="/marvel"
+          >
+            Marvel
+          </NavLink>
 
-            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
-                <ul className="navbar-nav ml-auto">
-                    <span className='nav-item nav-link text-primary'>
-                        { user?.name }
-                    </span>
+          <NavLink
+            className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
+            to="/dc"
+          >
+            DC
+          </NavLink>
 
-                    <button
-                        className='nav-item nav-link btn'
-                        onClick={ onLogout }
-                    >
-                        Logout
-                    </button>
-                </ul>
-            </div>
-        </nav>
-    );
+          <NavLink
+            className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
+            to="/search"
+          >
+            Search
+          </NavLink>
+
+        </div>
+      </div>
+
+      <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
+        <ul className="navbar-nav ml-auto">
+          <span className='nav-item nav-link text-primary'>
+            {user?.name}
+          </span>
+
+          <button
+            className='nav-item nav-link btn'
+            onClick={onLogout}
+          >
+            Logout
+          </button>
+        </ul>
+      </div>
+    </nav>
+  );
 };

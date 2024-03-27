@@ -5,33 +5,32 @@ import { AuthContext } from '../context';
 
 export const LoginPage = () => {
 
-    const { login } = useContext( AuthContext );
-    const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    const onLogin = () => {
+  const onLogin = () => {
+    // const lastPath = localStorage.getItem( 'lastPath' ) || '/';
 
-        // const lastPath = localStorage.getItem( 'lastPath' ) || '/';
+    login('Manuel Garcia');
 
-        login( 'Manuel Garcia' );
+    navigate('/', {
+      replace: true
+    });
+  };
 
-        navigate( '/', {
-            replace: true
-        });
-    };
+  return (
+    <div className='container mt-5'>
 
-    return (
-        <div className='container mt-5'>
-            
-            <h1>Login</h1>
-            <hr />
+      <h1>Login</h1>
+      <hr />
 
-            <button
-                className='btn btn-primary'
-                onClick={ onLogin }
-            >
-                Login
-            </button>
-            
-        </div>
-    );
+      <button
+        className='btn btn-primary'
+        onClick={onLogin}
+      >
+        Login
+      </button>
+
+    </div>
+  );
 };
