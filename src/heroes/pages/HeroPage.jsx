@@ -10,15 +10,13 @@ export const HeroPage = () => {
 
   const navigate = useNavigate();
 
-  const onNavigateBack = () => {
+  const onNavigateBack = () => navigate(-1);
 
-    navigate(-1);
-  }
 
   if (!hero) return <Navigate to='/marvel' />;
 
   return (
-    <div className=' row mt-5'>
+    <div className='row mt-5'>
       <div className='col-4'>
         <img
           src={`/assets/heroes/${id}.jpg`}
