@@ -7,20 +7,20 @@ import { Navbar } from "../../ui"
 export const HeroesRoutes = () => {
   return (
     <>
-      <Navbar />
+      <Navbar>
+        <div className='container'>
+          <Routes>
+            <Route path='marvel' element={<MarvelPage />} />
+            <Route path='dc' element={<DCPage />} />
 
-      <div className='container'>
-        <Routes>
-          <Route path='marvel' element={<MarvelPage />} />
-          <Route path='dc' element={<DCPage />} />
+            <Route path='search' element={<SearchPage />} />
+            <Route path='hero/:id' element={<HeroPage />} />
 
-          <Route path='search' element={<SearchPage />} />
-          <Route path='hero/:id' element={<HeroPage />} />
+            <Route path='/' element={<Navigate to='/marvel' />} />
 
-          <Route path='/' element={<Navigate to='/marvel' />} />
-
-        </Routes>
-      </div>
+          </Routes>
+        </div>
+      </Navbar>
     </>
   );
 };

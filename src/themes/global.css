@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+/* Login CSS */
+.bg-image {
+  background-image: url('../../assets/heroes/background-login.jpeg');
+  background-size: cover;
+  background-position: center;
+}
